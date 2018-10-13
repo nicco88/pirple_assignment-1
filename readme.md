@@ -7,6 +7,8 @@ Please create a simple "Hello World" API. Meaning:
 
 2. When someone posts anything to the route /hello, you should return a welcome message, in JSON format. This message can be anything you want. 
 
+---
+
 ### 1. Start the server and test it
 ```js
 /* 
@@ -27,6 +29,7 @@ server.listen( 3000, () => {
   console.log("SERVER LISTENING ON PORT 3000!")
 });
 ```
+
 ### 2. Gathering the desired data
 Desired data:
 1. Request Paths
@@ -51,7 +54,7 @@ const server = http.createServer( ( req, res ) => {
   /** We now want to get the URL and parse it.
    * The second argument means "parse the query string
    * and return an object".
-   * Be aware the default is set to false.
+   * Be aware, the default is set to false.
    */
   const parsedURL = url.parse( req.url, true );
 
@@ -393,7 +396,7 @@ server.listen( 3000, () => {
 let handlers = {};
 
 // Define a sample handler
-handlers.cowabunga = ( data, callback ) => {
+handlers.hello = ( data, callback ) => {
   // Callback an HTTP status code and a payload object
   callback( 200, { 'message' : 'cowabunga handler' });
 }
@@ -404,7 +407,7 @@ handlers.notFound = ( data, callback ) => callback( 404 );
 // Define the request router
 // Each router has a custom handler
 const router = {
-  'cowabunga': handlers.cowabunga,
+  'hello': handlers.hello,
 };
 ```
 
@@ -557,7 +560,7 @@ server.listen( config.port, () => {
 let handlers = {};
 
 // Define a sample handler
-handlers.cowabunga = ( data, callback ) => {
+handlers.hello = ( data, callback ) => {
   // Callback an HTTP status code and a payload object
   callback( 200, { 'message' : 'cowabunga handler' });
 }
@@ -566,7 +569,7 @@ handlers.cowabunga = ( data, callback ) => {
 handlers.notFound = ( data, callback ) => callback( 404 );
 
 const router = {
-  'cowabunga': handlers.cowabunga,
+  'hello': handlers.hello,
 };
 ```
 
@@ -754,7 +757,7 @@ const unifiedServer = ( req, res ) => {
 let handlers = {};
 
 // Define a sample handler
-handlers.cowabunga = ( data, callback ) => {
+handlers.hello = ( data, callback ) => {
   // Callback an HTTP status code and a payload object
   callback( 406, { 'message' : 'cowabunga handler' });
 }
@@ -763,7 +766,7 @@ handlers.cowabunga = ( data, callback ) => {
 handlers.notFound = ( data, callback ) => callback( 404 );
 
 const router = {
-  'cowabunga': handlers.cowabunga,
+  'hello': handlers.hello,
 };
 ```
 
@@ -889,7 +892,7 @@ handlers.ping = ( data, callback ) => {
 }
 
 // Define a sample handler
-handlers.cowabunga = ( data, callback ) => {
+handlers.hello = ( data, callback ) => {
   // Callback an HTTP status code and a payload object
   callback( 200, { 'meassage' : 'Cowabunga!!! XD' });
 }
@@ -899,6 +902,6 @@ handlers.notFound = ( data, callback ) => callback( 404 );
 
 const router = {
   'ping': handlers.ping,
-  'cowabunga': handlers.cowabunga,
+  'hello': handlers.hello,
 };
 ```
