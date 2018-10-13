@@ -9,6 +9,21 @@ Please create a simple "Hello World" API. Meaning:
 
 ---
 
+## Brief Description
+The Hello World API listens on port 3000 for the development environment and on port 5000 for the production environment.
+
+The `/ping` route is set so as to test if the server is running.
+
+The `/hello` route will display the welcome message in JSON format.
+
+If other routes other than the two above are hit, the status code sent will be a 404.
+
+All other detailed code explanations are written below.
+
+---
+
+## Procedure
+
 ### 1. Start the server and test it
 ```js
 /* 
